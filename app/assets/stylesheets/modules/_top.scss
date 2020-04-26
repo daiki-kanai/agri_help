@@ -1,5 +1,13 @@
 .jumbotron {
-  background: url(top.jpg);
+  background: url(top4.jpg);
   background-size: cover;
-  background-position: center 60%;
+  background-position: center 70%;
+}
+
+.jumbotron-extend {
+  height: 35vh;
+}
+
+.col-lg-4 img {
+  width: 70%;
 }
