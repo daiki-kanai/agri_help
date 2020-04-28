@@ -15,20 +15,22 @@ let center = { lat: <%=current_user.latitude %>, lng: <%=current_user.longitude 
 
 function initMap(){
   map = new google.maps.Map(document.getElementById('map'), {
-//latが緯度、lngが経度を示します
-//centerがマップの中心になる（予定はユーザー現在地を取得）
+  //latが緯度、lngが経度を示します
+  //centerがマップの中心になる（予定はユーザー現在地を取得）
   center: center,
   zoom: 10,
-// オプションがあるならここに
+  // オプションがあるならここに
   mapTypeControl: false,
   streetViewControl: false
   });
 //座標にピンを表示
   marker = new google.maps.Marker({
     position:  {lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %> },
-// マップを表示させたいマップ名
+  // マップを表示させたいマップ名
     map: map
   });
 }
+
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %> &callback=initMap" async defer></script>
