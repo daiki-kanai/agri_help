@@ -4,7 +4,7 @@
 
 <style>
 #map{
-  height: 400px;
+  height: 500px;
 }
 </style>
 
@@ -12,12 +12,13 @@
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
 //latが緯度、lngが経度を示します
-  center: {lat: 35.672799, lng: 139.688},
+// centerがマップの中心になる（予定はユーザー現在地を取得）
+  center: {lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %> },
   zoom: 10
   });
 //positionに指定した座標にピンを表示させます
   marker = new google.maps.Marker({
-    position:  {lat: 35.672799, lng: 139.688},
+    position:  {lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %> },
     map: map
   });
 }
