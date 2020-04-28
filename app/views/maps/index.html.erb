@@ -12,9 +12,12 @@
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
 //latが緯度、lngが経度を示します
-// centerがマップの中心になる（予定はユーザー現在地を取得）
+//centerがマップの中心になる（予定はユーザー現在地を取得）
   center: {lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %> },
-  zoom: 10
+  zoom: 10,
+// オプションがあるならここに
+  mapTypeControl: false,
+  streetViewControl: false
   });
 //positionに指定した座標にピンを表示させます
   marker = new google.maps.Marker({
