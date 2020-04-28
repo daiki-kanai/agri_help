@@ -1,15 +1,24 @@
 <h2>gmap</h2>
+<%=  current_user.address %>
 <div id='map'></div>
 
 <style>
-#map {height: 400px;}
+#map{
+  height: 400px;
+}
 </style>
 
 <script>
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 8
+//latが緯度、lngが経度を示します
+  center: {lat: 35.672799, lng: 139.688},
+  zoom: 10
+  });
+//positionに指定した座標にピンを表示させます
+  marker = new google.maps.Marker({
+    position:  {lat: 35.672799, lng: 139.688},
+    map: map
   });
 }
 </script>
