@@ -72,3 +72,5 @@ gem 'devise-i18n'
 
 # GoogleMaps
 gem 'geocoder'
+# APIキーの漏えい防止
+gem 'dotenv-rails'
