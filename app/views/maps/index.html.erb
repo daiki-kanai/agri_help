@@ -1,0 +1,60 @@
+<h2>map</h2>
+<div id='map'></div>
+
+<style>
+#map{
+  height: 500px;
+}
+</style>
+
+<script>
+// ログインユーザー本人の位置を定義
+let your = { lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %> };
+
+// マップを生成
+function initMap(){
+  let map = new google.maps.Map(document.getElementById('map'), {
+    center: your,               //マップの中心
+    zoom: 11,                   //マップの解析度
+    mapTypeControl: false,      //オプション
+    streetViewControl: false    //オプション
+  });
+
+  var transitLayer = new google.maps.TransitLayer();
+  transitLayer.setMap(map);
+
+  // ユーザー情報の入手
+  <% @users.each do |user| %>
+  (function() {
+
+    // 吹き出しに表示する文
+    let contentString = 
+      '<div>'+
+      '<a href="/">'+
+      '<p>'+
+      '<%= user.username %>'
+      '</p>'+
+      '</div>';
+
+    let infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    // 複数マーカーの記述
+    let marker = new google.maps.Marker({
+      position: {lat: <%= user.latitude %>, lng: <%= user.longitude %>},
+      map: map,
+      title: contentString
+    });
+
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  })();
+  <% end %>
+}
+</script>
+
+<%# googleMapsAPIkey情報 %>
+<script async defer 
+src="https://maps.googleapis.com/maps/api/js?key= <%= ENV['GOOGLE_MAP_API_KEY'] %> &callback=initMap">
+</script>
