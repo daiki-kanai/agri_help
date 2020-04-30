@@ -1,3 +1,7 @@
-<h2><%= @username %>のページ</h2>
-<p><%= @address %></p>
-<p><%= @introduction %></p>
+<h2><%= @user.username %>のページ</h2>
+<p><%= @user.address %></p>
+<p><%= @user.introduction %></p>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "会員登録情報の修正", edit_user_registration_path %>
+<% end %> 
