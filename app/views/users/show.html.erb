@@ -1,0 +1,14 @@
+<div class="container profile">
+  <div class="card mx-auto" style="width: 40rem; ">
+    <div class="card-body">
+      <h1 class="card-title"><%= @user.username %></h1>
+      <h5 class="card-subtitle mb-2 text-muted"><p><%= @user.address %></p></h5>
+      <p class="card-text"><p><%= @user.introduction %></p></p>
+      <% if current_user.id == @user.id %>
+        <%= link_to "会員登録情報の修正", edit_user_registration_path, class: "card-link btn btn-primary" %>
+      <% else %>
+        <%= link_to "チャットをする", "#", class: "card-link btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

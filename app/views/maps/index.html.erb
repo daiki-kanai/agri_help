@@ -15,13 +15,13 @@ let your = { lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %>
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
     center: your,               //マップの中心
-    zoom: 11,                   //マップの解析度
+    zoom: 10,                   //マップの解析度
     mapTypeControl: false,      //オプション
     streetViewControl: false    //オプション
   });
 
-  var transitLayer = new google.maps.TransitLayer();
-  transitLayer.setMap(map);
+  // var transitLayer = new google.maps.TransitLayer();
+  // transitLayer.setMap(map);
 
   // ユーザー情報の入手
   <% @users.each do |user| %>
@@ -30,9 +30,9 @@ function initMap(){
     // 吹き出しに表示する文
     let contentString = 
       '<div>'+
-      '<a href="/">'+
+      '<a href="/users/<%= user.id %>">'+
       '<p>'+
-      '<%= user.username %>'
+      '<%= user.username %>さん'
       '</p>'+
       '</div>';
 
