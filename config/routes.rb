@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "top#index"
   resources :top, only: :index
   resources :maps, only: :index
+  resources :users, only: :show
 end
