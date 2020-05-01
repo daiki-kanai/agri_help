@@ -74,3 +74,5 @@ gem 'devise-i18n'
 gem 'geocoder'
 # APIキーの漏えい防止
 gem 'dotenv-rails'
+
+gem "font-awesome-sass"
