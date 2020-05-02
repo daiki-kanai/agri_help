@@ -30,7 +30,7 @@
               </div>
             </div>
           </div>
-                    <%# 1人分のブロック %>
+          <%# 1人分のブロック %>
           <div class="chat_list">
             <div class="chat_people">
               <div class="chat_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"></div>
@@ -106,12 +106,14 @@
             </div>
           </div>
           <%# 自分のメッセージ %>
-          <div class="outgoing_msg">
-            <div class="sent_msg">
-              <p>自分のメッセージ自分のメッセージ</p>
-              <span class="time_date"> 09:33    |    ○月○日</span>
+          <% @messages.each do |message| %>
+            <div class="outgoing_msg">
+              <div class="sent_msg">
+                <p><%= message.content %></p>
+                <span class="time_date"> 09:33    |    ○月○日</span>
+              </div>
             </div>
-          </div>
+          <% end %>
           <%# 入力フォーム %>
           <div class="type_msg">
             <div class="input_msg_write">
