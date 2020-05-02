@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :top, only: :index
   resources :maps, only: :index
   resources :users, only: :show
-  resources :messages, only: :index
+  resources :messages, only: [:index, :create]
 end

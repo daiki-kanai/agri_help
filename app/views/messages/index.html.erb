@@ -117,8 +117,10 @@
           <%# 入力フォーム %>
           <div class="type_msg">
             <div class="input_msg_write">
-              <input type="text" class="write_msg" placeholder="メッセージを入力して下さい">
-              <button class="msg_send_btn" type="button"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+              <%= form_with model: @message, class: :form, local: true do |form| %>
+                <%= form.text_area :content, placeholder: :メッセージを入力して下さい, class: :form_content %>
+                <button class="msg_send_btn" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+              <% end %>
             </div>
           </div>
         </div>
