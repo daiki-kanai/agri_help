@@ -110,7 +110,7 @@
             <div class="outgoing_msg">
               <div class="sent_msg">
                 <p><%= message.content %></p>
-                <span class="time_date"> 09:33    |    ○月○日</span>
+                <span class="time_date"><%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
               </div>
             </div>
           <% end %>
