@@ -2,7 +2,10 @@
 @import "modules/application";
 @import "modules/user";
 @import "modules/map";
+@import "modules/message";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // ログイン画面
 .container-login {
