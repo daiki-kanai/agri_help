@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :maps, only: :index
   resources :users, only: :show
   resources :messages, only: [:index, :create]
+  resources :rooms, only: [:create, :show, :index]
 end
