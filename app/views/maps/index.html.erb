@@ -1,95 +1,21 @@
 <div class="container map-page d-flex">
   <div class="sidebar">
     <div class="list-name">
-      <h6>近くのユーザー</h6>
+      <h6>登録済みユーザー</h6>
     </div>
     <div class="nearlist">
-
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー1</p>
+      <% @users.each do |user| %>
+        <div class="nearlist__block">
+          <div class="nearlist__block__username">
+            <p><%= user.username %></p>
+          </div>
+          <div class="nearlist__block__useraddress">
+            <p><%= user.address %></p>
+          </div>
         </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー2</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー3</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー4</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー5</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー6</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー7</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー8</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー9</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-      <div class="nearlist__block">
-        <div class="username">
-          <p>ユーザー10</p>
-        </div>
-        <div class="useraddress">
-          <p>〇〇県〇〇市</p>
-        </div>
-      </div>
-
+      <% end %> 
     </div>
   </div>
-
   <div id='map'></div>
 </div>
 <style>
@@ -107,7 +33,7 @@ let your = { lat: <%=current_user.latitude %>, lng: <%=current_user.longitude %>
 function initMap(){
   let map = new google.maps.Map(document.getElementById('map'), {
     center: your,               //マップの中心
-    zoom: 10,                   //マップの解析度
+    zoom: 11,                   //マップの解析度
     mapTypeControl: false,      //オプション
     streetViewControl: false    //オプション
   });

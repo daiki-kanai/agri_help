@@ -30,16 +30,16 @@
     position: relative;
     padding: 10px;
     margin-bottom: 10px;
-    .username p {
+    .nearlist__block__username p {
       font-size: 13px;
       font-weight: bold;
     }
-    .useraddress {
+    .nearlist__block__useraddress {
       position: absolute;
       bottom: 0px;
       right: 10px;
     }
-    .useraddress p {
+    .nearlist__block__useraddress p {
       font-size: 12px;
       color: grey;
     }
