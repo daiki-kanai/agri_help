@@ -1,4 +1,5 @@
 <div class = "container chat-container"> 
+
   <div class = "chat-header">
     <h1 class = "chat-header__titile">チャットルーム</h1>
     <div class = "chat-header__entry">
@@ -10,6 +11,7 @@
       </div>
     </div>
   </div>  
+
   <div class = "chat-main">
     <div class = "chat-main__messages">
       <% if @messages.present? %>
@@ -31,11 +33,20 @@
     </div>
 
     <%= form_for @message do |f| %>
-      <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-      <%= f.hidden_field :room_id, :value => @room.id %>
-      <br>
-      <%= f.submit "投稿する" %>
+      <div class = "chat-main__masseage-form">
+        <div class = "chat-main__masseage-form__form">
+          <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , class: "form-control" %>
+        </div>
+        <div class = "chat-main__masseage-form__btn">
+          <%= f.hidden_field :room_id, :value => @room.id %>
+          <%= f.submit "投稿する", class: "btn btn-info" %>
+        </div>
+      </div>
     <% end %>
+
+
+
+
 
   </div>
 </div>

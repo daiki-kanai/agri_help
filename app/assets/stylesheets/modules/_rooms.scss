@@ -1,5 +1,9 @@
 .chat-container {
   padding-top: 20px;
+  height: 90vh;
+  width: 100%;
+  position: relative;
+
 
   .chat-header {
 
@@ -40,6 +44,24 @@
             margin-bottom: 0;
           }
         }
+      }
+    }
+    &__masseage-form {
+      display: flex;
+      padding-top: 30px;
+      position: absolute;
+      bottom: 50px;
+
+
+      &__form {
+        background-color: lightpink;
+        width: 1000px;
+
+      }
+
+      &__btn {
+        float: right;
+        padding-left: 10px;
       }
     }
   }
