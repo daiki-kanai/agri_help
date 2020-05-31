@@ -5,13 +5,40 @@
 
     &__entry {
       display: flex;
-      padding: 10px 0;
+      padding-top: 10px;
 
       &__users {
         display: flex;
 
         &__user {
           margin-right: 15px;
+        }
+      }
+    }
+  }
+  .chat-main {
+    padding-top: 30px;
+    &__messages {
+
+      &__box {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid lightgray;
+        padding: 10px;
+        position: relative;
+
+        &__data {
+          font-size: 12px;
+
+          &__username {
+          }
+
+          &__date {
+            position: absolute;
+            right: 10px;
+            bottom: 0px;
+            margin-bottom: 0;
+          }
         }
       }
     }
