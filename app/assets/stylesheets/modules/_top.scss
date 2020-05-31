@@ -1,15 +1,33 @@
 .jumbotron {
   background: url(top4.jpg);
   background-size: cover;
-  background-position: center 70%;
+  background-position: center 73%;
   height: 33vh;
+  padding: 100px;
 
-  &__title {
+  &__contents {
+    margin-left: 50px;
     color: white;
+
+    &__title {
+      font-size: 50px;
+      font-weight: bold;
+      -webkit-text-stroke: 2px black;
+    }
+    &__message {
+      font-size: 20px;
+    }
   }
 }
 
+.top-container {
 
-.col-lg-4 img {
-  width: 70%;
+  &__contents {
+
+  }
+}
+
+.top-container__contents__card__img {
+  width: 200px;
+  height: 250px;
 }
