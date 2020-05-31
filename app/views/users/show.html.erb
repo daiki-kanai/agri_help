@@ -14,12 +14,10 @@
             <%= fields_for @entry do |e| %>
               <%= e.hidden_field :user_id, :value=> @user.id %>
             <% end %>
-            <%= f.submit "チャットを始める" %>
+            <%= f.submit "チャットを始める", class: "card-link btn btn-primary" %>
           <% end %>
         <% end %>
       <% end %>
-        <%# <%= link_to "チャットをする", "#", class: "card-link btn btn-success" %>
-      
     </div>
   </div>
 </div>
