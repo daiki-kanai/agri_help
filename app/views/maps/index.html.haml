@@ -1,0 +1,106 @@
+.container.map-page.d-flex
+  .sidebar
+    .list-name
+      %h6 近くのユーザー
+    .nearlist
+      .nearlist__block
+        .username
+          %p ユーザー1
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー2
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー3
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー4
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー5
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー6
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー7
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー8
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー9
+        .useraddress
+          %p 〇〇県〇〇市
+      .nearlist__block
+        .username
+          %p ユーザー10
+        .useraddress
+          %p 〇〇県〇〇市
+  #map
+:css
+  #map{
+    height: 600px;
+    width: 800px;
+  }
+:javascript
+  // ログインユーザー本人の位置を定義
+  let your = { lat: #{current_user.latitude}, lng: #{current_user.longitude} };
+  
+  // マップを生成
+  function initMap(){
+    let map = new google.maps.Map(document.getElementById('map'), {
+      center: your,               //マップの中心
+      zoom: 10,                   //マップの解析度
+      mapTypeControl: false,      //オプション
+      streetViewControl: false    //オプション
+    });
+  
+    // var transitLayer = new google.maps.TransitLayer();
+    // transitLayer.setMap(map);
+  
+    // ユーザー情報の入手
+  <haml_silent>   @users.each do |user| 
+  </haml_silent><haml_block>  (function() {
+  
+      // 吹き出しに表示する文
+      let contentString = 
+        '<div>'+
+        '<a href="/users/#{@users.ids}">'+
+        '<p>'+
+        '</p>'+
+        '</div>';
+  
+      let infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      // 複数マーカーの記述
+      let marker = new google.maps.Marker({
+        position: {lat: #{user.latitude}, lng: #{user.longitude}},
+        map: map,
+        title: contentString
+      });
+  
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+    })();
+  </haml_block>}
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key= #{ENV['GOOGLE_MAP_API_KEY']} =initMap"}
+  :cdata

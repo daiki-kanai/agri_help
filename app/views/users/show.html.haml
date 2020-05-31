@@ -1,0 +1,19 @@
+.container.profile
+  .card.mx-auto{:style => "width: 40rem; "}
+    .card-body
+      %h1.card-title= @user.username
+      %h5.card-subtitle.mb-2.text-muted
+      %p= @user.address
+      %p.card-text
+      %p= @user.introduction
+      - if current_user.id == @user.id
+        = link_to "会員登録情報の修正", edit_user_registration_path, class: "card-link btn btn-primary"
+      - else
+        - if @isRoom == true
+          %p
+            %a{:href => "/rooms/#{@roomId}"} チャットへ
+        - else
+          = form_for @room do |f|
+            = fields_for @entry do |e|
+              = e.hidden_field :user_id, :value=> @user.id
+            = f.submit "チャットを始める"
