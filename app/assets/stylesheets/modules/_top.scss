@@ -2,12 +2,13 @@
   background: url(top4.jpg);
   background-size: cover;
   background-position: center 70%;
-  // opacity: 0.9;
+  height: 33vh;
+
+  &__title {
+    color: white;
+  }
 }
 
-.jumbotron-extend {
-  height: 35vh;
-}
 
 .col-lg-4 img {
   width: 70%;

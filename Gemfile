@@ -76,3 +76,4 @@ gem 'geocoder'
 gem 'dotenv-rails'
 
 gem "font-awesome-sass"
+gem "haml-rails"
