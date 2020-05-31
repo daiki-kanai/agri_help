@@ -20,7 +20,14 @@
   }
 }
 
+.top-container {
 
-.col-lg-4 img {
-  width: 70%;
+  &__contents {
+
+  }
+}
+
+.top-container__contents__card__img {
+  width: 200px;
+  height: 250px;
 }
