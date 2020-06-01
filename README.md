@@ -1,24 +1,93 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Contents
 
-Things you may want to cover:
+## Team
 
-* Ruby version
+fleamarket_sample_74f
+Team develogging
+Menber：４ persons
 
-* System dependencies
+## App
 
-* Configuration
+Flea Market app
 
-* Database creation
+## Delivery
 
-* Database initialization
+3 weeks
 
-* How to run the test suite
+## Tecknology
 
-* Services (job queues, cache servers, search engines, etc.)
+- Ruby
+  - 2.5.1p57 (2018-03-29 revision 63029)
+- Rails
+- Javascript
+- HTML/HAML
+- CSS/SCSS
+- Git
+  - 2.26.0
+- MySQL
+- AWS
 
-* Deployment instructions
 
-* ...
+# DB 設計
+
+## users Table
+
+| Column       | Type   | Options                   |
+| ------------ | ------ | ------------------------- |
+| username     | string | null: false               |
+| email        | string | null: false, unique: true |
+| address      | string | null: false               |
+| userimage    | string |                           |
+| latitude     | float  |                           |
+| longitude    | float  |                           |
+| introduction | text   |                           |
+| password     | string | null: false               |
+
+### Association
+
+- has_many :messages
+- has_many :entries
+
+
+## rooms Table
+
+| Column | Type | Options |
+| ------ | ---- | ------- |
+|        |      |         |
+
+### Association
+
+- has_many :messages
+- has_many :entries
+
+
+## entries Table
+
+| Column  | Type    | Options           |
+| ------- | ------- | ----------------- |
+| user_id | integer | foreign_key: true |
+| room_id | integer | foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+
+## messages Table
+
+| Column  | Type    | Options           |
+| ------- | ------- | ----------------- |
+| user_id | integer | foreign_key: true |
+| content | string  | null: false       |
+| image   | string  |                   |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+
+---
