@@ -3,11 +3,11 @@
 ![トップページ画像](READMEpictures/topPage.png)
 ## アプリ名
 
-Agri help
+Agri help  （農業助っ人サイト）
 
 
 ## 概要
-
+ Googleマップから選んだユーザーに、チャットを通して作業の依頼や相談ができるアプリケーションです。
 
 
 ## 使い方
