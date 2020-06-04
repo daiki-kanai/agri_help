@@ -5,27 +5,27 @@
     <%= bootstrap_devise_error_messages! %>
 
     <div class="form-group">
-      <%= f.label :username %>
+      <%= f.label :username %><span class="badge badge-danger">必須</span>
       <%= f.text_field :username, autofocus: true, autocomplete: 'username', class: 'form-control', placeholder: '例）お助けマン' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :email %>
+      <%= f.label :email %><span class="badge badge-danger">必須</span>
       <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: '例）helpmen@gmail.com' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :address %>
+      <%= f.label :address %><span class="badge badge-danger">必須</span>
       <%= f.text_field :address, autofocus: true, autocomplete: 'address', class: 'form-control', placeholder: '例）栃木県小山市' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :introduction %>
+      <%= f.label :introduction %><span class="badge badge-secondary">任意</span>
       <%= f.text_area :introduction, autofocus: true, autocomplete: 'introduction', class: 'form-control', placeholder: '例）市内で農家をしています。主にネギ、ナス、白菜、ニンジンです。気軽に声をかけてください！！' %>
     </div>
 
     <div class="form-group">
-      <%= f.label :password %>
+      <%= f.label :password %><span class="badge badge-danger">必須</span>
       <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
 
       <% if @minimum_password_length %>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :password_confirmation %>
+      <%= f.label :password_confirmation %><span class="badge badge-danger">必須</span>
       <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
     </div>
 
