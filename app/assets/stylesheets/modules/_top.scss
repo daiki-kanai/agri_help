@@ -18,13 +18,11 @@
 }
 
 .top-container {
+  padding-bottom: 10px;
 
-  &__contents {
-
+  &__contents__card__img {
+    width: 200px;
+    height: 250px;
   }
 }
 
-.top-container__contents__card__img {
-  width: 200px;
-  height: 250px;
-}
