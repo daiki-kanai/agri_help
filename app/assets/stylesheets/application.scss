@@ -4,16 +4,12 @@
 @import "modules/map";
 @import "modules/message";
 @import "modules/rooms";
+@import "modules/registration";
+@import "modules/login";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// ログイン画面
-.container-login {
-  @extend .container-fluid;
-  max-width: 576px;
-  padding: 2rem;
-}
 
 // 背景色
 body {

@@ -22,7 +22,7 @@ ja:
         current_password: "現在のパスワード"
         username: "ニックネーム"
         email: "メールアドレス"
-        address: "住所（市区町村まで）"
+        address: "住所(市区町村まで)"
         introduction: "自己紹介"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
