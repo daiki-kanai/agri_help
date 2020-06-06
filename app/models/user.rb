@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
 
+  validates :username, presence: true
+
   geocoded_by :address
   after_validation :geocode
 end
