@@ -134,6 +134,7 @@ Agri help  （農業助っ人サイト）
 | Column  | Type    | Options           |
 | ------- | ------- | ----------------- |
 | user_id | integer | foreign_key: true |
+| room_id | integer | foreign_key: true |
 | content | string  | null: false       |
 | image   | string  |                   |
 
