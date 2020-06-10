@@ -1,21 +1,10 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
-  # def index
-  #   @messages = Message.all
-  #   @message = Message.new
-  # end
-
   def create
     if Entry.where(user_id: current_user.id, room_id: params[:message][:room_id]).present?
     @message = Message.create(params.require(:message).permit(:user_id, :content, :room_id).merge(:user_id => current_user.id))
     redirect_to "/rooms/#{@message.room_id}"
-    end
+    end    
   end
-
-  # private
-  # def message_params
-  #   params.require(:message).permit(:user_id, :content, :image, :room_id).merge(user_id: current_user.id)
-  # end
-
 end
