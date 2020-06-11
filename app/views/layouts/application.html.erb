@@ -19,23 +19,23 @@
           <ul class="navbar-nav">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%=  link_to("#{current_user.username}さんのマイページ", "/users/#{current_user.id}", {class: "nav-link"}) %>
+                <%= link_to "#{current_user.username}さんのマイページ", user_path(current_user.id), class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%=  link_to("助っ人を探す", maps_path, {class: "nav-link"}) %>
+                <%= link_to "助っ人を探す", maps_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%=  link_to("チャット", "#", {class: "nav-link"}) %>
+                <%= link_to "チャット", "#", class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%=  link_to("ログアウト", destroy_user_session_path, {method: "delete", class: "nav-link"}) %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: "nav-link" %>
               </li>
             <% else %>
               <li class="nav-item">
-                <%=  link_to("会員登録", new_user_registration_path, {class: "nav-link"}) %>
+                <%= link_to "会員登録", new_user_registration_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%=  link_to("ログイン", new_user_session_path, {class: "nav-link"}) %>
+                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
               </li>
             <% end %>
           </ul>
@@ -44,8 +44,5 @@
     </header>
 
     <%= yield %>
-    <%# <footer class="footer">
-      <p class="copyright">&copy; 2020 DK</p>
-    </footer> %>
   </body>
 </html> 
