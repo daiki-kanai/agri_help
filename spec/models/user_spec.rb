@@ -49,14 +49,14 @@ describe User do
       expect(new_user.errors[:email]).to include("は既に使用されています。")
     end
 
-    it "passwordが５文字以下だと登録できない" do
-      user = build(:user, password: "11111")
+    it "passwordが7文字以下だと登録できない" do
+      user = build(:user, password: "1111111", password_confirmation: "1111111")
       user.valid?
-      expect(user.errors[:password]).to include("は6文字以上に設定して下さい。")
+      expect(user.errors[:password]).to include("は8文字以上に設定して下さい。")
     end
 
-    it "passwordが６文字以上だと登録できる" do
-      user = build(:user, password: "111111", password_confirmation: "111111")
+    it "passwordが8文字以上だと登録できる" do
+      user = build(:user, password: "11111111", password_confirmation: "11111111")
       expect(user).to be_valid
     end
   end

@@ -4,7 +4,7 @@ FactoryBot.define do
     email                 {"test@gmail.com"}
     address               {"東京都渋谷区"}
     introduction          {"よろしくお願いします。"}
-    password              {"000000"}
-    password_confirmation {"000000"}
+    password              {"00000000"}
+    password_confirmation {"00000000"}
   end
 end
